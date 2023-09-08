@@ -7,11 +7,11 @@ sudo sysctl -p
 # Configurar o NAT para permitir o acesso à Internet
 sudo iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE
 
-# Instalar o pacote iptables-persistent (para salvar as regras)
-sudo apt-get install -y iptables-persistent
-
 # Criar o diretório /etc/iptables, se não existir
 sudo mkdir -p /etc/iptables
 
 # Salvar regras de iptables
-sudo iptables-save | sudo tee /etc/iptables/rules.v4
+sudo iptables-save | sudo tee /etc/iptables/rules.v4.temp
+
+# Mover o arquivo temporário para o local correto
+sudo mv /etc/iptables/rules.v4.temp /etc/iptables/rules.v4
