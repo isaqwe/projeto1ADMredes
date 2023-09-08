@@ -7,8 +7,8 @@ sudo sysctl -p
 # Configurar o NAT para permitir o acesso à Internet
 sudo iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE
 
-# Salvar regras de iptables
+# Instalar o pacote iptables-persistent (para salvar as regras)
 sudo apt-get install -y iptables-persistent
-sudo netfilter-persistent save
-sudo netfilter-persistent reload
 
+# Salvar regras de iptables
+sudo iptables-save | sudo tee /etc/iptables/rules.v4
