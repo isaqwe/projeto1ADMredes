@@ -10,5 +10,8 @@ sudo iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE
 # Instalar o pacote iptables-persistent (para salvar as regras)
 sudo apt-get install -y iptables-persistent
 
+# Criar o diretório /etc/iptables, se não existir
+sudo mkdir -p /etc/iptables
+
 # Salvar regras de iptables
 sudo iptables-save | sudo tee /etc/iptables/rules.v4
