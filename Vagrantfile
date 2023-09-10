@@ -44,11 +44,13 @@ vm2.vm.provision "shell", path: "provision/vm2.sh"
       vb.name = "vm3"
     end
 
+    # Configuração da Interface de Rede Pública (DHCP)
+    vm3.vm.network "public_network", type: "dhcp"
+
     # Configuração da Interface de Rede Privada com IP Estático
     vm3.vm.network "private_network", type: "static", ip: "192.168.50.12"
 
-    # Configuração da Interface de Rede Pública (DHCP)
-    vm3.vm.network "public_network", type: "dhcp"
+
 
 # VM 3 (Gateway de Rede)
 vm3.vm.provision "shell", path: "provision/vm3.sh"
