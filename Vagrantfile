@@ -4,7 +4,7 @@ Vagrant.configure("2") do |config|
   # VM 1 (Servidor Web)
   config.vm.define "vm1" do |vm1|
     vm1.vm.provider "virtualbox" do |vb|
-      vb.memory = "512"
+      vb.memory = "1024"
       vb.name = "vm1"
     end
 
@@ -22,7 +22,7 @@ vm1.vm.provision "shell", path: "provision/vm1.sh"
   # VM 2 (Servidor de Banco de Dados)
   config.vm.define "vm2" do |vm2|
     vm2.vm.provider "virtualbox" do |vb|
-      vb.memory = "512"
+      vb.memory = "1024"
       vb.name = "vm2"
     end
 
@@ -40,7 +40,7 @@ vm2.vm.provision "shell", path: "provision/vm2.sh"
   # VM 3 (Gateway de Rede)
   config.vm.define "vm3" do |vm3|
     vm3.vm.provider "virtualbox" do |vb|
-      vb.memory = "512"
+      vb.memory = "1024"
       vb.name = "vm3"
     end
 

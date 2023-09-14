@@ -15,3 +15,9 @@ sudo iptables-save | sudo tee /etc/iptables/rules.v4.temp
 
 # Mover o arquivo temporário para o local correto
 sudo mv /etc/iptables/rules.v4.temp /etc/iptables/rules.v4
+
+# Configuração da interface de rede
+sudo ifconfig enp0s8 192.168.50.12 netmask 255.255.255.0 up
+
+# Adicionar rota padrão para a VM3 (Gateway)
+sudo ip route add default via 192.168.50.12 dev enp0s
