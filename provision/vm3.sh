@@ -11,13 +11,5 @@ sudo iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE
 sudo mkdir -p /etc/iptables
 
 # Salvar regras de iptables
-sudo iptables-save | sudo tee /etc/iptables/rules.v4.temp
+sudo iptables-save | sudo tee /etc/iptables/rules.v4
 
-# Mover o arquivo temporário para o local correto
-sudo mv /etc/iptables/rules.v4.temp /etc/iptables/rules.v4
-
-# Configuração da interface de rede
-sudo ifconfig enp0s8 192.168.50.12 netmask 255.255.255.0 up
-
-# Adicionar rota padrão para a VM3 (Gateway)
-sudo ifconfig enp0s8 192.168.50.12 netmask 255.255.255.0 up
