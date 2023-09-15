@@ -26,4 +26,4 @@ sudo systemctl start mysql
 sudo ifconfig enp0s8 192.168.50.11 netmask 255.255.255.0 up
 
 # Adicionar rota padrão para a VM3 (Gateway)
-sudo ip route add default via 192.168.50.12 dev enp0s
+sudo ip route add default via 192.168.50.12 dev enp0s8

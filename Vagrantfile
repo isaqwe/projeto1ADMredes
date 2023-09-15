@@ -8,6 +8,7 @@ Vagrant.configure("2") do |config|
       vb.name = "vm1"
     end
 
+
     # Configuração da Interface de Rede Privada com IP Estático
     vm1.vm.network "private_network", type: "static", ip: "192.168.50.10"
 
@@ -23,6 +24,7 @@ vm1.vm.provision "shell", path: "provision/vm1.sh"
   config.vm.define "vm2" do |vm2|
     vm2.vm.provider "virtualbox" do |vb|
       vb.memory = "1024"
+      
       vb.name = "vm2"
     end
 
@@ -41,6 +43,7 @@ vm2.vm.provision "shell", path: "provision/vm2.sh"
   config.vm.define "vm3" do |vm3|
     vm3.vm.provider "virtualbox" do |vb|
       vb.memory = "1024"
+      
       vb.name = "vm3"
     end
 
