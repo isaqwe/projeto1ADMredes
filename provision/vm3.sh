@@ -5,7 +5,7 @@ echo "net.ipv4.ip_forward=1" | sudo tee /etc/sysctl.conf
 sudo sysctl -p
 
 # Configurar o NAT para permitir o acesso à Internet
-sudo iptables -t nat -A POSTROUTING -o enp0s9 -j MASQUERADE
+sudo iptables -t nat -A POSTROUTING -o enp0s3 -j MASQUERADE
 
 # Criar o diretório /etc/iptables, se não existir
 sudo mkdir -p /etc/iptables
