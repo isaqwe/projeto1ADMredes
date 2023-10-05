@@ -40,5 +40,3 @@ Seu objetivo é criar um ambiente de laboratório onde VM1 e VM2 podem se comuni
 - Você deve usar a configuração de rede do Vagrant para definir as interfaces de rede e seus endereços IP.
 - Certifique-se de que as VMs possam se comunicar entre si e que a VM3 tenha conectividade com a Internet através da interface de rede pública.
 - Verifique se os serviços (Apache, MySQL/PostgreSQL) nas VMs 1 e 2 estão funcionando corretamente.
-
-# Documentação
